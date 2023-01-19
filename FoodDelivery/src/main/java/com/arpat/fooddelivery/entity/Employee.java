@@ -39,7 +39,13 @@ public class Employee implements Serializable {
     private Long updateUser;
 
 
-    public Employee( Long id, String username, String name, String password, String phone, String sex, String idNumber, Integer status, LocalDateTime createTime, LocalDateTime updateTime, Long createUser, Long updateUser) {
+    /**
+     * default constructor
+     */
+    public Employee() {
+    }
+
+    public Employee(Long id, String username, String name, String password, String phone, String sex, String idNumber, Integer status, LocalDateTime createTime, LocalDateTime updateTime, Long createUser, Long updateUser) {
         this.id = id;
         this.username = username;
         this.name = name;
