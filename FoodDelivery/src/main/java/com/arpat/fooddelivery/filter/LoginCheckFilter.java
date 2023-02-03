@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
 
 @WebFilter(filterName = "loginCheckFilter",urlPatterns = "/*")
 @Slf4j
@@ -42,7 +43,7 @@ public class LoginCheckFilter implements Filter {
         //3.如果不处理直接放行
         if(check){
             log.info("本次请求{}不需要处理",request.getRequestURI());
-            filterChain.doFilter(request,response);
+            //filterChain.doFilter(request,response);
             return;
         }
 
@@ -74,5 +75,4 @@ public class LoginCheckFilter implements Filter {
         }
         return false;
     }
-
 }
